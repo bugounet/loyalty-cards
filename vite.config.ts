@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base: '/',
+  base: '/loyalty-cards/',
   resolve: {
     conditions: ['zbar-inlined']
   },
@@ -24,8 +24,8 @@ export default defineConfig({
         theme_color: '#0032b4',
         background_color: '#fbf8ff',
         display: 'standalone',
-        start_url: '/',
-        scope: '/',
+        start_url: '/loyalty-cards/',
+        scope: '/loyalty-cards/',
         icons: [
           { src: 'pwa-64x64.png', sizes: '64x64', type: 'image/png' },
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
