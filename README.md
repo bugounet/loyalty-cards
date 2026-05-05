@@ -4,6 +4,8 @@ A local-first loyalty card wallet — install it as a PWA, keep your cards on-de
 scan or type in loyalty numbers, and let your phone surface the right card when you
 walk into the shop.
 
+Preview available at https://bugounet.github.io/loyalty-cards/ 
+
 ## Features
 
 - **Manual wallet** — add, edit, search, and delete loyalty cards with logo, accent
