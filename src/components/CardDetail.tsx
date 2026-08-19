@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { LoyaltyCard } from '../types';
 import type { Coordinates } from '../utils/geo';
 import { getCardInitial } from '../utils/cardFormatting';
@@ -30,6 +30,14 @@ export function CardDetail({
   const [confirming, setConfirming] = useState(false);
   const brightnessAttemptedRef = useRef(false);
   const accent = card.accentColor || '#0032b4';
+
+  useLayoutEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    });
+  }, [card.id]);
 
   useEffect(() => {
     if (brightnessAttemptedRef.current) return;

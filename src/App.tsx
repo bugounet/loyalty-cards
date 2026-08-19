@@ -76,6 +76,10 @@ export function App() {
     setStorageMessage(result.ok ? '' : result.message);
   }
 
+  function openCard(cardId: string) {
+    setView({ name: 'detail', cardId });
+  }
+
   function createCard(input: LoyaltyCardInput) {
     const now = new Date().toISOString();
     const normalized = normalizeCardInput(input);
@@ -259,7 +263,7 @@ export function App() {
           {hasActivationZones ? (
             <NearbyCardsSection
               matches={nearbyCards}
-              onOpenCard={(cardId) => setView({ name: 'detail', cardId })}
+              onOpenCard={openCard}
               onRetry={currentPosition.requestPosition}
               status={currentPosition.status}
             />
@@ -270,7 +274,7 @@ export function App() {
           ) : (
             <section className="cards-grid" aria-label="Cartes de fidelite">
               {filteredCards.map((card) => (
-                <CardPreview key={card.id} card={card} onOpen={() => setView({ name: 'detail', cardId: card.id })} />
+                <CardPreview key={card.id} card={card} onOpen={() => openCard(card.id)} />
               ))}
             </section>
           )}
